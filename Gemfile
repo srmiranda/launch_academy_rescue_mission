@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
@@ -43,3 +42,12 @@ group :development do
   gem 'spring'
 end
 
+gem 'pry-rails', group: [:development, :test]
+gem 'rspec-rails', group: [:development, :test]
+gem 'capybara', group: [:development, :test]
+gem 'launchy', group: [:development, :test]
+gem 'factory_girl', group: [:development, :test]
+gem 'valid_attribute', group: [:development, :test]
+gem 'shoulda-matchers', group: [:development, :test], require: false
+gem 'devise'
+gem 'foundation-rails'

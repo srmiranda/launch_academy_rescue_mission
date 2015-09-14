@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  root 'questions#index'
+
+  get '/questions', to: 'questions#index'
+
+  get '/questions/:id', to: 'questions#show'
+  resources :questions, except: [:destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
