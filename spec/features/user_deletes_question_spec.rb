@@ -4,13 +4,13 @@ require 'rails_helper'
 
 feature 'view questions', %Q{
   As a user
-  I want to edit a question
-  So that I can correct any mistakes or add updates
+  I want to delete a question
+  So that I can delete duplicate questions
 } do
   # Acceptance Criteria
-  # - I must provide valid information
-  # - I must be presented with errors if I fill out the form incorrectly
-  # - I must be able to get to the edit page from the question details page
+  # - I must be able delete a question from the question edit page
+  # - I must be able delete a question from the question details page
+  # - All answers associated with the question must also be deleted
     scenario 'visitor edits a question' do
       question = FactoryGirl.create(:question)
 
