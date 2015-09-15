@@ -15,5 +15,4 @@ feature 'view questions', %Q{
     visit questions_path
     expect(page).to have_content(question.title)
   end
-
 end

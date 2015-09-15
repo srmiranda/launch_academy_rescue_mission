@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-
   root 'questions#index'
 
-  get '/questions', to: 'questions#index'
+  # get '/new', to: 'questions#new'
+  resources :questions do
+    resources :answers
+  end
 
-  get '/questions/:id', to: 'questions#show'
-  resources :questions, except: [:destroy]
+  # get 'answers/new', to: 'answers#new'
+  # resources :answers, :questions
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
