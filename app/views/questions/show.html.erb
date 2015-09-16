@@ -6,11 +6,12 @@
 <p><%= @question.description %></p>
 <%= link_to 'Edit', '/questions/' + @question.to_param + '/edit' %></br>
 <h4>Answers:</h4>
-<p>
   <% @answers.each do |answer| %>
+<p>
   <%= answer.description %>
   <% end %>
 </p>
 
 
-<%= link_to 'Answer This Question', new_question_answer_path(@question) %>
+<%= link_to 'Answer This Question', new_question_answer_path(@question) %></br>
+<%= link_to 'Home', root_path %>

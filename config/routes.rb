@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'questions#index'
 
-  # get '/new', to: 'questions#new'
   resources :questions do
     resources :answers
   end
