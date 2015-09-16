@@ -1,16 +1,22 @@
-<%- if @answer.errors.present? -%>
-    <ul>
-      <%- @answer.errors.full_messages.each do |error| -%>
-        <li><%= error %></li>
-      <%- end -%>
-    </ul>
+<div class="row">
+  <div class="large-12">
+
+    <%- if @answer.errors.present? -%>
+        <ul>
+          <%- @answer.errors.full_messages.each do |error| -%>
+            <li><%= error %></li>
+          <%- end -%>
+        </ul>
+      </div>
+    <%- end -%>
+
+
+    <%= form_for [@question, @answer] do |f| %>
+      <%= f.label :description, class: "question_title" %>
+      <%= f.text_area :description, class: "question_field" %>
+
+      <%= f.submit "Submit Answer", class: 'button tiny'  %>
+    <%- end -%>
+
   </div>
-<%- end -%>
-
-
-<%= form_for [@question, @answer] do |f| %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-
-  <%= f.submit "Submit Answer" %>
-<%- end -%>
+</div>

@@ -15,6 +15,7 @@ feature 'view questions', %Q{
       question = FactoryGirl.create(:question)
 
       visit root_path
+      click_link question.title
       click_link "Delete"
       expect(page).to have_content("Question deleted.")
     end

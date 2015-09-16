@@ -1,17 +1,18 @@
-<% if flash[:notice] %>
-  <%= flash[:notice] %>
-<% end %>
+<div class="row">
+  <div class="large-12">
 
-<h3><%= @question.title %></h3>
-<p><%= @question.description %></p>
-<%= link_to 'Edit', '/questions/' + @question.to_param + '/edit' %></br>
-<h4>Answers:</h4>
-  <% @answers.each do |answer| %>
-<p>
-  <%= answer.description %>
-  <% end %>
-</p>
+    <h3 class="question_title"><%= @question.title %></h3>
+    <p><%= @question.description %></p>
+    <%= link_to 'Edit', edit_question_path, class: 'button tiny'%>
+    <%= link_to 'Delete', question_path, method: :delete, class: 'button tiny' %>
+    <h4 class="question_title">Answers:</h4>
+      <% @answers.each do |answer| %>
+      <p class="answer">
+        <%= answer.description %>
+      </p>
+      <% end %>
 
+    <%= link_to 'Answer This Question', new_question_answer_path(@question), class: 'button tiny' %></br>
 
-<%= link_to 'Answer This Question', new_question_answer_path(@question) %></br>
-<%= link_to 'Home', root_path %>
+  </div>
+</div>

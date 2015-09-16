@@ -1,16 +1,16 @@
 ​<%= form_for(@question) do |f| %>
 
   <div class="field">
-    <%= f.label "Question" %><br>
+    <%= f.label "Question", class: "question_title" %><br>
     <%= f.text_field :title %>
   </div>
 
   <div class="field">
-    <%= f.label "description" %><br>
+    <%= f.label "description", class: "question_title" %><br>
     <%= f.text_field :description %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Update Question", class: "button tiny" %>
   </div>
 <% end %>
